@@ -290,7 +290,7 @@ Process:      INACTIVE (org.qtproject.example)
 
 ## External modules
 
-The application uses the https://github.com/atomicgo/cursor/blob/main/cursor.go module of , which provides nice ANSI commands to add some color to the console. And hey - who doesn`t like **<span style="color:blue">c</span><span style="color:red">o</span><span style="color:darkyellow">l</span><span style="color:purple">o</span><span style="color:cyan">r</span><span style="color:darkred">f</span><span style="color:green">u</span><span style="color:orange">l</span>**. outputs?
+The application uses the https://github.com/atomicgo/cursor/blob/main/cursor.go module of , which provides nice ANSI commands to add some color to the console. Hey - who doesn`t like **<span style="color:blue">c</span><span style="color:red">o</span><span style="color:darkyellow">l</span><span style="color:purple">o</span><span style="color:cyan">r</span><span style="color:darkred">f</span><span style="color:green">u</span><span style="color:orange">l</span>** outputs?
 
 ## Contact us
 [SSE - Secure Systems Engineering GmbH](https://www.securesystems.de) supports companies in the production, maintenance and testing of secure systems and infrastructures. Feel free to get in touch with us.
