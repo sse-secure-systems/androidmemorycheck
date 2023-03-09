@@ -1,6 +1,62 @@
-# Read out memory information for a process
+# Dynamic reading of memory information of an Android application
 
 The provided application supports the investigation of the memory behavior of Android processes. It uses the `adb shell dumpsys meminfo` command and converts the user-friendly output into machine-usable key-value pairs. For the investigation of an application behavior, e.g. for the detection of security vulnerabilities due to insufficient memory management, it requires the possibility of a long-term investigation of an application, where the results have to be machine-processable. This possibility is not offered by `adb` out of the box.
+
+## Example of an adb memory information
+```
+adb shell dumpsys meminfo 16484
+
+Applications Memory Usage (in Kilobytes):
+Uptime: 178112237 Realtime: 178112237
+
+** MEMINFO in pid 16484 [org.qtproject.example] **
+                   Pss  Private  Private     Swap      Rss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------   ------
+  Native Heap    22650    22604        0        0    24768    39352    26998     1831
+  Dalvik Heap     1816     1724        0        0     5948     4671     2336     2335
+ Dalvik Other     1514     1464        0        0     1964
+        Stack      524      524        0        0      532
+       Ashmem        2        0        0        0        8
+    Other dev       12        0       12        0      224
+     .so mmap    20005      776    17168        0    56300
+    .jar mmap     2293        0      756        0    26624
+    .apk mmap    17087        0    16132        0    40828
+    .ttf mmap       19        0        0        0      128
+    .dex mmap       28        0       24        0      112
+    .oat mmap       47        0        0        0     1940
+    .art mmap     5512     5292        0        0    14616
+   Other mmap       44       32        4        0      940
+      Unknown      749      744        0        0     1068
+        TOTAL    72302    33160    34096        0    72302    44023    29334     4166
+
+ App Summary
+                       Pss(KB)                        Rss(KB)
+                        ------                         ------
+           Java Heap:     7016                          20564
+         Native Heap:    22604                          24768
+                Code:    34860                         126108
+               Stack:      524                            532
+            Graphics:        0                              0
+       Private Other:     2252
+              System:     5046
+             Unknown:                                    4028
+
+           TOTAL PSS:    72302            TOTAL RSS:   176000      TOTAL SWAP (KB):        0
+
+ Objects
+               Views:       20         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:       12        AssetManagers:        0
+       Local Binders:       10        Proxy Binders:       31
+       Parcel memory:        7         Parcel count:       27
+    Death Recipients:        0      OpenSSL Sockets:        0
+            WebViews:        0
+
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+```
 
 ## Run the application
 
@@ -123,7 +179,7 @@ Rough trends of memory development are given for the application. These are not 
 
 These trends are only displayed visually and are not saved. The processing of csv files, for example via the Excel application, offers far more possibilities for analysis.
 
-## Get name of running processes
+## Get names of running processes
 
 For the analysis of the memory behavior, the package name of the application to be examined must be known. This is specified according to the scheme `com.yourcompany.yourapp`. If you do not know the package name, you can list all currently running packages by using the `packages` argument.
 
@@ -176,6 +232,9 @@ Packages:
 ## Get keys of memory information
 
 In case a filter is to be applied to the screen or file output when `meminfo` is called, the keys provided by `adb` for the package can be output.
+
+*In case of tables the keys are produced by using a type prefix, the column name and the name value within the table rows.*
+
 ```
 go run main.go names
 ```
