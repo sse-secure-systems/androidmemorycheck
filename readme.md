@@ -226,3 +226,5 @@ adb ram reader> go run main.go names -p="org.qtproject.example" -adb="C:\Users\T
 Measurement:  09.03.2023 (22:52:33)
 Process:      INACTIVE (org.qtproject.example)
 ```
+## Contact us
+[SSE - Secure Systems Engineering GmbH](https://www.securesystems.de) supports companies in the production, maintenance and testing of secure systems and infrastructures.
