@@ -174,10 +174,10 @@ Process:             INACTIVE since 86sec (org.qtproject.example)
 
 Rough trends of memory development are given for the application. These are not real trend lines, but the change of differently damped low-pass filters.
 
-1. **T1000**: The change of the low-pass filter affected by the new value as follows: `filtervalue = filtervalue * 0.999 + newvalue * 0.001` (0.1%)
-2. **T100**: The change of the low-pass filter affected by the new value as follows: `filtervalue = filtervalue * 0.99 + newvalue * 0.01` (1%)
-3. **T10**: The change of the low-pass filter affected by the new value as follows: `filtervalue = filtervalue * 0.9 + newvalue * 0.1` (10%)
-4. **T1**: The change of the value, compared to the last measured one
+1. **T1000**: The change of the low-pass filter affected by the new `value` as follows: `filtervalue = filtervalue * 0.999 + value * 0.001` (0.1%)
+2. **T100**: The change of the low-pass filter affected by the new `value` as follows: `filtervalue = filtervalue * 0.99 + value * 0.01` (1%)
+3. **T10**: The change of the low-pass filter affected by the new `value` as follows: `filtervalue = filtervalue * 0.9 + value * 0.1` (10%)
+4. **T1**: The change of the `value`, compared to the last measured one
 
 These trends are only displayed visually and are not saved. The processing of csv files, for example via the Excel application, offers far more possibilities for analysis.
 

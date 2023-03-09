@@ -142,7 +142,7 @@ func (reader *internalReader) Scan(packagename string) (map[string]int, string, 
 	}
 
 	// Run the adb readmeminfocommand
-	readmeminfocommand := exec.Command(`C:\Users\Augustin\AppData\Local\Android\Sdk\platform-tools\adb`, "shell", "dumpsys", "meminfo", processidstring)
+	readmeminfocommand := exec.Command(reader.adbpath, "shell", "dumpsys", "meminfo", processidstring)
 	meminfobytes, readmeminfocommanderror := readmeminfocommand.Output()
 	if readmeminfocommanderror != nil {
 		return nil, "", readmeminfocommanderror
