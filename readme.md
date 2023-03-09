@@ -1,6 +1,6 @@
 # Read out memory information for a process
 
-The provided application supports the investigation of the memory behavior of Android processes.
+The provided application supports the investigation of the memory behavior of Android processes. It uses the `adb shell dumpsys meminfo` command and converts the user-friendly output into machine-usable key-value pairs. For the investigation of an application behavior, e.g. for the detection of security vulnerabilities due to insufficient memory management, it requires the possibility of a long-term investigation of an application, where the results have to be machine-processable. This possibility is not offered by `adb` out of the box.
 
 ## Run the application
 
