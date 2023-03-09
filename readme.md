@@ -2,6 +2,8 @@
 
 The provided application supports the investigation of the memory behavior of Android processes. It uses the `adb shell dumpsys meminfo` command and converts the user-friendly output into machine-usable key-value pairs. For the investigation of an application behavior, e.g. for the detection of security vulnerabilities due to insufficient memory management, it requires the possibility of a long-term investigation of an application, where the results have to be machine-processable. This possibility is not offered by `adb` out of the box.
 
+**It's actually nothing more than a little parser of the `adb dumpsys meminfo` output that is able to continuously request the content to parse.**
+
 ## Example of an adb memory information
 ```
 adb shell dumpsys meminfo 16484
@@ -285,5 +287,10 @@ adb ram reader> go run main.go names -p="org.qtproject.example" -adb="C:\Users\T
 Measurement:  09.03.2023 (22:52:33)
 Process:      INACTIVE (org.qtproject.example)
 ```
+
+## External modules
+
+The application uses the https://github.com/atomicgo/cursor/blob/main/cursor.go module of , which provides nice ANSI commands to add some color to the console. And hey - who doesn`t like **<span style="color:blue">c</span><span style="color:red">o</span><span style="color:darkyellow">l</span><span style="color:purple">o</span><span style="color:cyan">r</span><span style="color:darkred">f</span><span style="color:green">u</span><span style="color:orange">l</span>**. outputs?
+
 ## Contact us
-[SSE - Secure Systems Engineering GmbH](https://www.securesystems.de) supports companies in the production, maintenance and testing of secure systems and infrastructures.
+[SSE - Secure Systems Engineering GmbH](https://www.securesystems.de) supports companies in the production, maintenance and testing of secure systems and infrastructures. Feel free to get in touch with us.
